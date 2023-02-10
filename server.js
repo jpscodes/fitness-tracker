@@ -4,6 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Loaded "secrets" in the .env file
+require('dotenv').config();
+// Connected to the MongoDB database through the database folder relating to the .env file
+require('./config/database');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
