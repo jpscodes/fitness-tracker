@@ -3,10 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// Added Method override to my project
+var methodOverride = require('method-override');
 
-// Loaded "secrets" in the .env file
+// Loaded "secrets" in the .env file to be accessed 
 require('dotenv').config();
-// Connected to the MongoDB database through the database folder relating to the .env file
+// Connected to the MongoDB database through the database folder relating to the .env file database url
 require('./config/database');
 
 var indexRouter = require('./routes/index');
@@ -18,6 +20,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// Added method override and called it after installing using npm i method-override in terminal
+app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
