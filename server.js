@@ -3,6 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// Added ability to track users session with passport
+var session = require('express-session');
+// Added passport to track users session
+const passport = require('passport');
 // Added Method override to my project
 var methodOverride = require('method-override');
 
@@ -10,6 +14,8 @@ var methodOverride = require('method-override');
 require('dotenv').config();
 // Connected to the MongoDB database through the database folder relating to the .env file database url
 require('./config/database');
+// requiring passport
+require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -27,6 +33,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// Adding session middleware ensuring user is logged in
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+// mounted passport twice
+app.use(passport.initialize());
+app.use(passport.session());
+// Added 
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
