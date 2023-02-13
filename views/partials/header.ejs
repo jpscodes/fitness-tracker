@@ -8,6 +8,8 @@
     <nav>
       <img src="/images/camera.svg">
       <a href="/workouts" <%- title === 'Workouts' ? 'class="active"' : '' %>>ALL Workouts</a>
+      <a href="/">Home Page</a>
+      <a href="/workouts/new">Add a New Workout</a>
       <% if (user) { %>
           <a href="/logout">LOG OUT</a>
       <% } else { %>
