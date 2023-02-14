@@ -1,11 +1,16 @@
 <%- include('../partials/header') %>
 
 <h3>Your workout here!</h3>
+<thead>
+  <tr>
+    <th>User</th>
+    <th>Date</th>
+    <th>Review</th>
+    <th>Rating</th>
+    <th></th>
+  </tr>
+</thead>
 
-
-<!-- <h2><%= workouts.weight %></h2>
-<h2><%= workouts.sets %></h2>
-<h2><%= workouts %></h2> -->
 <h2><% workouts.forEach(function(w) {%>
     <%= w.content %>
     <%= w.workoutDate %>
