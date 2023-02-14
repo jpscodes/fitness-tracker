@@ -17,3 +17,14 @@ a {
 .login img {
   height: 30px;
 }
+
+.workout-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.workout-user img {
+  border-radius: 50%;
+  height: 40px;
+}
