@@ -3,20 +3,26 @@ const Workout = require('../models/workout');
 module.exports = {
     index,
     create,
-    new: newWork,
+    new: newWorkout,
 };
 
 function index(req, res) {
-  console.log(`worouts controller recevied ${req}`);
+  
   Workout.find({}, function(err, workouts) {
     res.render('workouts/index', { title: 'All Workouts' });
   });
 };
 
 function create(req, res) {
-  // res.redirect('/workouts/new');
+  console.log('create', req.body)
+  const workout = new Workout(req.body);
+  workout.save(function(err) {
+    if (err) return res.redirect('/workouts/new');
+    console.log(workout);
+    res.redirect('/workouts');
+  });
 };
 
-function newWork(req, res) {
+function newWorkout(req, res) {
   res.render('./workouts/new', { title: 'New Workout' });
 };
