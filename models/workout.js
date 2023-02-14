@@ -25,6 +25,12 @@ const workoutSchema = new Schema({
     min: 1,
     max: 20
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
+  userName: String,
+  userAvatar: String
 }, {
   timestamps: true
 });

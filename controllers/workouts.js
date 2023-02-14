@@ -9,7 +9,7 @@ module.exports = {
 function index(req, res) {
   
   Workout.find({}, function(err, workouts) {
-    res.render('workouts/index', { title: 'All Workouts' });
+    res.render('workouts/index', { title: 'All Workouts', workouts });
   });
 };
 

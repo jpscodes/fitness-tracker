@@ -2,7 +2,19 @@
 
 <h3>Your workout here!</h3>
 
-<%= workout.weight %>
+
+<!-- <h2><%= workouts.weight %></h2>
+<h2><%= workouts.sets %></h2>
+<h2><%= workouts %></h2> -->
+<h2><% workouts.forEach(function(w) {%>
+    <%= w.content %>
+    <%= w.workoutDate %>
+    <%= w.reps %>
+    <%= w.sets %>
+    <%= w.weight %>
+    <%= w.user %>
+    <%= w.avatar %>
+    <% }) %></h2>
 
 
 
