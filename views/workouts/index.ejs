@@ -1,27 +1,30 @@
 <%- include('../partials/header') %>
 
 <h3>Your workout here!</h3>
-<thead>
-  <tr>
-    <th>User</th>
-    <th>Date</th>
-    <th>Review</th>
-    <th>Rating</th>
-    <th></th>
-  </tr>
-</thead>
-
-<h2><% workouts.forEach(function(w) {%>
-    <%= w.content %>
-    <%= w.workoutDate %>
-    <%= w.reps %>
-    <%= w.sets %>
-    <%= w.weight %>
-    <%= w.userName %>
-    <%= w.avatar %>
-    <td class="workout-user"><img alt="avatar" src="<%= w.userAvatar %>" referrerpolicy="no-referrer" ><%= w.userName %></td>
-    <% }) %></h2>
-
-
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Exercise</th>
+      <th>Sets</th>
+      <th>Reps</th>
+      <th>Weight</th>
+      <th>User</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% workouts.forEach(function(w) {%>
+    <tr>
+      <td><%= w.workoutDate.toLocaleDateString() %></td>
+      <td><%= w.content %></td>
+      <td><%= w.reps %></td>
+      <td><%= w.sets %></td>
+      <td><%= w.weight %></td>
+      <td class="workout-user"><img alt="avatar" src="<%= w.userAvatar %>" referrerpolicy="no-referrer" ><%= w.userName %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>
