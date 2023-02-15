@@ -5,7 +5,9 @@ module.exports = {
     index,
     create,
     new: newWorkout,
-    show
+    show,
+    edit,
+    update
 };
 
 function index(req, res) {
@@ -16,6 +18,7 @@ function index(req, res) {
 };
 
 function create(req, res) {
+  console.log('new workout', req.body)
   req.body.user = req.user._id;
   req.body.userName = req.user.name;
   req.body.userAvatar = req.user.avatar;
@@ -27,7 +30,7 @@ function create(req, res) {
 };
 
 function newWorkout(req, res) {
-  res.render('./workouts/new', { title: 'New Workout' });
+  res.render('workouts/new', { title: 'New Workout' });
 };
 
 function show(req, res) {
@@ -35,4 +38,28 @@ function show(req, res) {
     res.render('workouts/show', { title: 'Details',
     workout })
   })
+};
+
+function edit(req, res) {
+  Workout.findById(req.params.id, function(err, workout) {
+    let d = workout.workoutDate;
+    let datestring = d.getFullYear().toString().padStart(4, '0') + '-' + (d.getMonth()+1).toString().padStart(2, '0') + '-' + d.getDate().toString().padStart(2, '0');
+    console.log(workout.workoutDate)
+    res.render('workouts/edit', { title: 'edit', workout, datestring })  
+  });
+};
+
+function update(req, res) {
+  console.log('line 51', req.body)
+  Workout.findOneAndUpdate(
+    {_id: req.params.id, user: req.user._id},
+    // update object with updated properties
+    req.body,
+    // options object with new: true to make sure updated doc is returned
+    {new: true},
+    function(err, workout) {
+      if (err || !workout) return res.redirect('/workouts');
+      res.redirect(`/workouts/${workout._id}`);
+    }
+  );
 };

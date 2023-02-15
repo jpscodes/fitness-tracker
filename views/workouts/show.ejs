@@ -22,21 +22,22 @@
       <td><%= workout.sets %></td>
       <td><%= workout.weight %></td>
       <td class="workout-user"><img alt="avatar" src="<%= workout.userAvatar %>" referrerpolicy="no-referrer" ><%= workout.userName %></td>
-      <td><a href="/workouts/<%= workout._id %>">Edit my Workout</a></td>
+      <td><a href="/workouts/<%= workout._id %>/edit">Edit my Workout</a></td>
     </tr>
   </tbody>
 </table>
 
 <h2>Comments: <% workout.comments.forEach(function(c) { %></h2>
 <% if (user?._id.equals(c.user)) { %>
-<h2>Comments: <%= c.content %></h2>
+<h2> <%= c.content %></h2>
+
 <% } else { %>
   <h5>No Comments Yet</h5>
 <% } %>
 <% }); %>
 <h2>Comment on <%= workout.userName %>'s Workout!</h2>
 <form action="/workouts/<%= workout._id %>/comments" method="POST">
-  <textarea name="comments" id="" cols="30" rows="10"></textarea>
+  <textarea name="content" id="" cols="30" rows="10"></textarea>
   <input type="submit" value="comment">
 </form>
 <%- include('../partials/footer') %>
