@@ -8,4 +8,5 @@ router.get('/new', ensureLoggedIn, workoutsCtrl.new);
 router.post('/', ensureLoggedIn, workoutsCtrl.create);
 router.get('/:id', ensureLoggedIn, workoutsCtrl.show);
 
+
 module.exports = router;

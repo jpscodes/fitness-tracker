@@ -33,7 +33,8 @@ function newWorkout(req, res) {
 };
 
 function show(req, res) {
-  Workout.findById(req.params.id)
-  res.render('workouts/show', { title: 'Details',
-Workout })
+  Workout.findById(req.params.id, function(err, workout) {
+    res.render('workouts/show', { title: 'Details',
+    workout })
+  })
 };
