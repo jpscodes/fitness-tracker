@@ -1,9 +1,11 @@
 const Workout = require('../models/workout');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 module.exports = {
     index,
     create,
     new: newWorkout,
+    show
 };
 
 function index(req, res) {
@@ -28,4 +30,10 @@ function create(req, res) {
 
 function newWorkout(req, res) {
   res.render('./workouts/new', { title: 'New Workout' });
+};
+
+function show(req, res) {
+  Workout.findById(req.params.id)
+  res.render('workouts/show', { title: 'Details',
+Workout })
 };

@@ -4,11 +4,12 @@
 <h3>Your new workout</h3>
 <form action="/workouts" method="POST">
   <h4>Workout Type:</h4><input type="text" name="content">
-  <h4>Workout Date:</h4><input type="datetime-local" name="Date">
+  <h4>Workout Date:</h4><input type="date" name="Date" value="toLocaleDateString">
   <h4>Weight:</h6> <input name="weight" value="100" max="999" min="0">
   <h4>sets:</h6>
   <select name="sets">
-    <option value="1" selected>1</option>
+    <option selected disabled>select one</option>
+    <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
@@ -21,7 +22,8 @@
   </select>
   <h4>reps:</h6>
   <select name="reps">
-    <option value="1" selected>1</option>
+    <option selected disabled>select one</option>
+    <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>

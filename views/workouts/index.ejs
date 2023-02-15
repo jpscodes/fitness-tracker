@@ -11,6 +11,7 @@
       <th>Weight</th>
       <th>User</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,7 @@
       <td><%= w.sets %></td>
       <td><%= w.weight %></td>
       <td class="workout-user"><img alt="avatar" src="<%= w.userAvatar %>" referrerpolicy="no-referrer" ><%= w.userName %></td>
+      <td><a href="/workouts/<%= w._id %>">Details</a></td>
     </tr>
     <% }) %>
   </tbody>
