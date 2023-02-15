@@ -16,14 +16,12 @@ function index(req, res) {
 };
 
 function create(req, res) {
-  console.log('create', req.body)
   req.body.user = req.user._id;
   req.body.userName = req.user.name;
   req.body.userAvatar = req.user.avatar;
   const workout = new Workout(req.body);
   workout.save(function(err) {
     if (err) return res.redirect('/workouts/new');
-    console.log(workout);
     res.redirect('/workouts');
   });
 };
