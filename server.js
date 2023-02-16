@@ -27,7 +27,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+console.log(path)
 // Added method override and called it after installing using npm i method-override in terminal
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
