@@ -29,7 +29,10 @@
 
 <h2>Comments: <% workout.comments.forEach(function(c) { %></h2>
 <% if (user?._id.equals(c.user)) { %>
-<h2> <%= c.content %></h2>
+
+<h5><%= c.content %></h5>
+<h5><%= c.userName %></h5>
+<h5><img alt="avatar" src="<%= workout.userAvatar %>" referrerpolicy="no-referrer"></h5>
 
 <% } else { %>
   <h5>No Comments Yet</h5>
