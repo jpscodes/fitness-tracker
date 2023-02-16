@@ -22,7 +22,7 @@ nav > a.active {
 }
 
 a {
-  color: blue;
+  color: black;
 }
 
 nav {
@@ -60,6 +60,7 @@ nav {
   background-repeat: no-repeat;
   height: 100vmin; 
   width: auto;
+  opacity: 50%;
 }
 
  .login-button {
@@ -70,9 +71,26 @@ nav {
   margin: 20px 50% 0px 50%;
 }
 
+.no-workout-style {
+  background-color: transparent;
+}
+
 .all-workouts-list > th {
-  padding: 20px;
+  padding: 40px;
   margin: 10px;
-  background-color: maroon transparent 30%;
+  background-color: lightsteelblue;
   display: inline-flexbox;
+}
+
+.all-workouts-td {
+/* background-color: lightblue; */
+}
+
+nav > h1 {
+  color: white;
+}
+
+.comment-show {
+  display: grid;
+  grid-template-columns: 3fr .5fr .5fr .5fr;
 }

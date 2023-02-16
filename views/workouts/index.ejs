@@ -9,19 +9,17 @@
       <th>Sets</th>
       <th>Reps</th>
       <th>Weight</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
+      <th class="no-workout-style">User</th>
     </tr>
   </thead>
   <tbody>
     <% workouts.forEach(function(w) {%>
     <tr>
-      <td><%= w.workoutDate.toLocaleDateString() %></td>
-      <td><%= w.content %></td>
-      <td><%= w.reps %></td>
-      <td><%= w.sets %></td>
-      <td><%= w.weight %></td>
+      <td class="all-workouts-td"><%= w.workoutDate.toLocaleDateString() %></td>
+      <td class="all-workouts-td"><%= w.content %></td>
+      <td class="all-workouts-td"><%= w.reps %></td>
+      <td class="all-workouts-td"><%= w.sets %></td>
+      <td class="all-workouts-td"><%= w.weight %></td>
       <td class="workout-user"><img alt="avatar" src="<%= w.userAvatar %>" referrerpolicy="no-referrer" style="border-radius: 50%; height: 60px"><%= w.userName %></td>
       <td><a href="/workouts/<%= w._id %>">Details</a></td>
     </tr>

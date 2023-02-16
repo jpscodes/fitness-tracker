@@ -22,7 +22,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/',
+    successRedirect: '/workouts',
     // Change to what's best for YOUR app
     failureRedirect: '/'
   }
