@@ -3,8 +3,33 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: right;
+}
+
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: #424748;
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
+}
+
 a {
-  color: #00B7FF;
+  color: blue;
+}
+
+.navbar {
+  padding: 20px;
+  background-color: grey;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .login {
@@ -27,4 +52,28 @@ a {
 .workout-user img {
   border-radius: 50%;
   height: 40px;
+}
+
+.login-page {
+  background-image: url('https://cdn.pixabay.com/photo/2018/10/09/16/04/sport-3735288_1280.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vmin; 
+  width: auto;
+}
+
+ .login-button {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: lightgreen;
+  margin: 20px 50% 0px 50%;
+}
+
+.all-workouts-list > th {
+  padding: 20px;
+  margin: 10px;
+  background-color: maroon transparent 30%;
+  back
+  display: inline-flexbox;
 }

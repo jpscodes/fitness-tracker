@@ -1,7 +1,8 @@
 const Workout = require('../models/workout');
 
 module.exports = {
-    create
+    create,
+    delete: deleteComment
 };
 
 function create(req, res) {
@@ -15,6 +16,24 @@ function create(req, res) {
       workout.save(function(err) {
         console.log(err)
       res.redirect(`/workouts/${workout._id}`);
+    });
+  });
+};
+
+function deleteComment(req, res) {
+  Workout.findOne({'comments._id': req.params.id, 'comments.user': req.user._id}).then(function(workout) {
+    // Rogue user!
+    if (!workout) return res.redirect('/workouts');
+    // Remove the review using the remove method available on Mongoose arrays
+    workout.comments.remove(req.params.id);
+    // Save the updated workout
+    workout.save().then(function() {
+      // Redirect back to the workout's show view
+      res.redirect(`/workouts/${workout._id}`);
+    }).catch(function(err) {
+      // Let Express display an error
+      return next(err);
+      // res.redirect(`/workouts/${workout._id}`);
     });
   });
 };

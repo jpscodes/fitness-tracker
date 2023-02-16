@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
 
-<h3>Your workout here!</h3>
-<table>
+<h3>The Communities Workouts Live Here!</h3>
+<table class="all-workouts">
   <thead>
-    <tr>
+    <tr class="all-workouts-list">
       <th>Date</th>
       <th>Exercise</th>
       <th>Sets</th>
@@ -22,7 +22,7 @@
       <td><%= w.reps %></td>
       <td><%= w.sets %></td>
       <td><%= w.weight %></td>
-      <td class="workout-user"><img alt="avatar" src="<%= w.userAvatar %>" referrerpolicy="no-referrer" ><%= w.userName %></td>
+      <td class="workout-user"><img alt="avatar" src="<%= w.userAvatar %>" referrerpolicy="no-referrer" style="border-radius: 50%; height: 60px"><%= w.userName %></td>
       <td><a href="/workouts/<%= w._id %>">Details</a></td>
     </tr>
     <% }) %>

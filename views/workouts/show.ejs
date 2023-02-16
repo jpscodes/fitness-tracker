@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Show details</h2>
+
 <table>
   <thead>
     <tr>
@@ -21,18 +21,20 @@
       <td><%= workout.reps %></td>
       <td><%= workout.sets %></td>
       <td><%= workout.weight %></td>
-      <td class="workout-user"><img alt="avatar" src="<%= workout.userAvatar %>" referrerpolicy="no-referrer" ><%= workout.userName %></td>
+      <td class="workout-user"><img alt="avatar" src="<%= workout.userAvatar %>" referrerpolicy="no-referrer" style="border-radius: 50%; height: 60px"><%= workout.userName %></td>
       <td><a href="/workouts/<%= workout._id %>/edit">Edit my Workout</a></td>
     </tr>
   </tbody>
 </table>
 
+
 <h2>Comments: <% workout.comments.forEach(function(c) { %></h2>
 <% if (user?._id.equals(c.user)) { %>
 
-<h5><%= c.content %></h5>
-<h5><%= c.userName %></h5>
-<h5><img alt="avatar" src="<%= workout.userAvatar %>" referrerpolicy="no-referrer"></h5>
+<h5><%= c.content %> 
+    <%= c.userName %> - <img alt="avatar" src="<%= workout.userAvatar %>" referrerpolicy="no-referrer" style="border-radius: 50%; height: 60px">
+</h5>
+<form action="/comments/<%= c._id %>?_method=DELETE" method="POST"><input type="submit" value="Delete"></form>
 
 <% } else { %>
   <h5>No Comments Yet</h5>
