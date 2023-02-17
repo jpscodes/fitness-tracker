@@ -39,7 +39,9 @@
 <% }); %>
 <h2>Comment on <%= workout.userName %>'s Workout!</h2>
 <form action="/workouts/<%= workout._id %>/comments" method="POST">
-  <textarea name="content" id="" cols="30" rows="10"></textarea>
-  <input type="submit" value="comment">
+  <div class="comment-here"></div>
+    <textarea id="my-comment" name="content" id="" cols="50" rows="5"></textarea>
+    <input id="submit-comment" type="submit" value="comment">
+  </div>
 </form>
 <%- include('../partials/footer') %>

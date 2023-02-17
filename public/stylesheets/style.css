@@ -107,8 +107,11 @@ nav > h1 {
 }
 
 #delete-comment {
-  background-color: black;
-  color: red;
+  background-color: gray;
+  color: maroon;
+  padding: 10px;
+  border-color: white;
+  margin-top: -10px;
 }
 
 .edit-workout > td {
@@ -146,4 +149,27 @@ nav > h1 {
 
 .show-workout-content {
   text-align: center;
+}
+
+.comment-here {
+  display: grid;
+  grid-gap: 10px;
+}
+
+#submit-comment {
+  background-color: gray;
+  color: greenyellow;
+  padding: 10px;
+  margin-top: 10px;
+  border-color: white;
+  margin-left: 10vw;
+}
+
+#my-comment {
+  display: grid;
+  grid-column: 1;
+  grid-row: span 2;
+  border-color: grey;
+  border-radius: 4%;
+  border-width: 6px;
 }
