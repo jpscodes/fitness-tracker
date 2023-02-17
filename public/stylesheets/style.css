@@ -91,9 +91,10 @@ nav > h1 {
 }
 
 .comment {
-  border: black;
-  border-color: black;
-  border-width: 100px;
+  
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 10px;
   border-radius: 2%;
   /* background: lightblue; */
   padding: 10px;
@@ -103,6 +104,11 @@ nav > h1 {
 
 .commenter-name {
   grid-row: 2;
+}
+
+#delete-comment {
+  background-color: black;
+  color: red;
 }
 
 .edit-workout > td {

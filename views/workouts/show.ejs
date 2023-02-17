@@ -32,7 +32,7 @@
   <div class="comment"><%= c.content %></div>     
 </p2>   
   <% if (user?._id.equals(c.user)) { %>
-    <form action="/comments/<%= c._id %>?_method=DELETE" method="POST"><input type="submit" value="Delete"></form>
+    <form action="/comments/<%= c._id %>?_method=DELETE" method="POST"><input id="delete-comment" type="submit" value="Delete Comment"></form>
   <% } else { %>
    
   <% } %>
