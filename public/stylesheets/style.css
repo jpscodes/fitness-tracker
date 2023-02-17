@@ -63,14 +63,6 @@ nav {
   opacity: 50%;
 }
 
- .login-button {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  background-color: lightgreen;
-  margin: 20px 50% 0px 50%;
-}
-
 .no-workout-style {
   background-color: transparent;
 }
@@ -83,7 +75,8 @@ nav {
 }
 
 .all-workouts-td {
-/* background-color: lightblue; */
+  background-color: lightblue;
+  text-align: center;
 }
 
 nav > h1 {
@@ -92,5 +85,59 @@ nav > h1 {
 
 .comment-show {
   display: grid;
-  grid-template-columns: 3fr .5fr .5fr .5fr;
+  grid-template-columns: .3fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 5px;
+}
+
+.comment {
+  border: black;
+  border-color: black;
+  border-width: 100px;
+  border-radius: 2%;
+  /* background: lightblue; */
+  padding: 10px;
+  grid-row: span 2;
+  grid-column: 2;
+}
+
+.commenter-name {
+  grid-row: 2;
+}
+
+.edit-workout > td {
+  padding: 10px;
+}
+
+#workout-add-btn {
+  background-color: lightblue;
+  margin: 10px;
+  border-radius: 4%;
+  border-color: black;
+  border-width: 4px;
+}
+
+#workout-add-btn:hover:not(.active) {
+  color: white;
+  background-color: green;
+  border-color: green;
+}
+
+#workout-add-sets, #workout-add-reps, #workout-add-type, #workout-add-date, #workout-add-weight {
+  border-radius: 10%;
+  border-color: black;
+  border-width: 4px;
+  color: black;
+  background-color: lightblue;
+}
+
+.show-workout-list > th {
+  padding: 40px;
+  margin: 10px;
+  background-color: lightsteelblue;
+  display: inline-flexbox;
+}
+
+.show-workout-content {
+  text-align: center;
 }

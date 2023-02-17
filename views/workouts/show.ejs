@@ -1,20 +1,18 @@
 <%- include('../partials/header') %>
 
-<table>
+<table class="all-workouts">
   <thead>
-    <tr>
+    <tr class="show-workout-list">
       <th>Date</th>
       <th>Exercise</th>
       <th>Sets</th>
       <th>Reps</th>
       <th>Weight</th>
       <th>User</th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr class="show-workout-content">
       <td><%= workout.workoutDate.toLocaleDateString() %></td>
       <td><%= workout.content %></td>
       <td><%= workout.reps %></td>
@@ -29,9 +27,9 @@
 <h2>Comments: </h2>
 <% workout.comments.forEach(function(c) { %>
 <p2 class="comment-show">
-  <div><%= c.content %></div>     
-  <div><%= c.userName %></div>     
   <img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" style="border-radius: 50%; height: 60px">
+  <div class="commenter-name"><%= c.userName %></div>     
+  <div class="comment"><%= c.content %></div>     
 </p2>   
   <% if (user?._id.equals(c.user)) { %>
     <form action="/comments/<%= c._id %>?_method=DELETE" method="POST"><input type="submit" value="Delete"></form>

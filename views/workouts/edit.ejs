@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
-<h2>Show details</h2>
-<table>
+<h2>Edit</h2>
+<table class="edit-workout">
   <thead>
     <tr>
       <th>Date</th>
@@ -9,7 +9,6 @@
       <th>Sets</th>
       <th>Reps</th>
       <th>Weight</th>
-      <th>User</th>
       <th></th>
       <th></th>
     </tr>
@@ -17,13 +16,13 @@
   <tbody>
     <tr>
       <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+        <%= console.log(datestring) %>
       <td><input aria-required="true" type="datetime-local" name="workoutDate" value="<%= datestring %>"></td>
       <td><input aria-required="true" type="text" name="content" value="<%= workout.content %>"></td>
       <td><input aria-required="true" type="number" name="reps" value="<%= workout.reps %>"></td>
       <td><input aria-required="true" type="number" name="sets" value="<%= workout.sets %>"></td>
       <td><input aria-required="true" type="number" name="weight" value="<%= workout.weight %>"></td>
-      <td class="workout-user"><img alt="avatar" src="<%= workout.userAvatar %>" referrerpolicy="no-referrer" ><%= workout.userName %></td>
-      <td><button type="submit">Update my Workout</button> </td>
+      <td><button type="submit">Update</button> </td>
       </form>
     </tr>
   </tbody>

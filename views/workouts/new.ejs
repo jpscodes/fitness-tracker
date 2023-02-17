@@ -3,11 +3,11 @@
 
 <h3>Your new workout</h3>
 <form action="/workouts" method="POST">
-  <h4>Workout Type:</h4><input type="text" name="content">
-  <h4>Workout Date:</h4><input type="datetime-local" name="workoutDate" value="toLocaleDateString">
-  <h4>Weight:</h6> <input name="weight" value="100" max="999" min="0">
-  <h4>sets:</h6>
-  <select name="sets">
+  <h4>Workout Type:</h4><input type="text" name="content" id="workout-add-type">
+  <h4>Workout Date:</h4><input type="datetime-local" name="workoutDate" value="toLocaleDateString" id="workout-add-date">
+  <h4>Weight:</h6> <input name="weight" value="100" max="999" min="0" id="workout-add-weight">
+  <h4>Sets:</h6>
+  <select name="sets" id="workout-add-sets">
     <option selected disabled>select one</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -20,8 +20,8 @@
     <option value="9">9</option>
     <option value="10">10</option>
   </select>
-  <h4>reps:</h6>
-  <select name="reps">
+  <h4>Reps:</h6>
+  <select name="reps" id="workout-add-reps">
     <option selected disabled>select one</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -44,7 +44,7 @@
     <option value="19">19</option>
     <option value="20">20</option>
   </select>
-  <input type="submit" value="Add Workout">
+  <input id="workout-add-btn" type="submit" value="Add My Workout">
 </form>
 
 <%- include('../partials/footer') %>
