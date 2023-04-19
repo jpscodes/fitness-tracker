@@ -56,10 +56,10 @@ nav {
 
 .login-page {
   background-image: url('https://cdn.pixabay.com/photo/2018/10/09/16/04/sport-3735288_1280.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   height: 100vmin; 
-  width: auto;
   opacity: 50%;
 }
 
