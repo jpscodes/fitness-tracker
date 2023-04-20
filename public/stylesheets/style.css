@@ -6,7 +6,6 @@ body {
 nav > a {
   margin: 20px;
   text-decoration: none;
-  padding: 10px;
   border-radius: 5px;
   justify-content: right;
 }
@@ -30,7 +29,13 @@ nav {
   background-color: grey;
   display: flex;
   justify-content: space-evenly;
-}
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+ }
 
 .login {
   display: flex;
